@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {  } from 'react';
+import {BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import Home from './pages/home';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import AllScholar from './pages/allScholar';
+import TrackStatus from './pages/trackStatus';
+import OfferScholar from './pages/offerScholar';
+import CreateOffer from './pages/offerScholar/createOffer';
 
-function App() {
+library.add(faUser);
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router> 
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/student/allScholar" component={AllScholar} />
+          <Route exact path="/student/trackStatus" component={TrackStatus} />
+          <Route exact path="/funder/offerScholar" component={OfferScholar} />
+          <Route exact path="/funder/offerScholar/create" component={CreateOffer} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

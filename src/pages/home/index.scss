@@ -1,0 +1,67 @@
+@import "../../index.scss";
+
+.main-app {
+  .main-container {
+    width: 100%;
+    height: 100vh;
+    padding: 32px 40px;
+    background: $primary;
+  }
+  .sign-in-button {
+    max-width: 120px;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .ant-btn {
+    border-radius: 12px;
+  }
+  .box1 {
+    margin-top: 70px;
+    margin-left: 50px;
+    max-width: 500px;
+    z-index: 1;
+  }
+
+  .web-name {
+    font-size: 6rem;
+    color: white;
+    font-weight: 600;
+  }
+  .web-detail {
+    font-size: 1.2rem;
+    color: white;
+  }
+  .two-button {
+    margin-top: 60px;
+    justify-content: space-between;
+  }
+  .find-scholar {
+    width: 230px;
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $primary;
+  }
+  .give-scholar {
+    width: 230px;
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $primary;
+  }
+  .box-image {
+    padding: 10px 10px;
+    margin: 0 auto;
+  }
+  .box2 {
+    position: relative;
+    margin-top: 60px;
+    right: 0;
+    max-width: 600px;
+  }
+
+  .user-icon {
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../index.scss";
+
+.menu-tab {
+  .main-menu-box {
+    padding: 15px 45px;
+    background: white;
+  }
+  .user-icon {
+    margin: 0 10px;
+  }
+  .button-menu {
+    font-size: 1rem;
+    font-weight: 600;
+    max-width: 140px;
+    border: none;
+    height: 50px;
+    &.status {
+      margin-left: 20px;
+    }
+    &:hover {
+      background: $lightBlue;
+      color: $primary;
+      border-radius: 12px;
+    }
+    &:focus {
+      background: $lightBlue;
+      color: $primary;
+      border-radius: 12px;
+    }
+  }
+}
