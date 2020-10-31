@@ -1,42 +1,52 @@
-import React from 'react';
-import './index.scss';
-import {Button, Col , Row} from 'antd';
-import homeImage from '../../assets/schoolbooks-colour1.svg'
+import React from "react";
+import "./index.scss";
+import { Button, Col, Row } from "antd";
+import homeImage from "../../assets/schoolbooks-colour1.svg";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
 
 const Home = () => {
-  const history = useHistory()
-  const userIcon =<FontAwesomeIcon icon={faUser} className='user-icon'/>
+  const history = useHistory();
+  const userIcon = <FontAwesomeIcon icon={faUser} className="user-icon" />;
   return (
-    <div className='main-app'>
+    <div className="main-app">
       <div className="main-container">
-  <Row justify="end"><Button className='sign-in-button'>เข้าสู่ระบบ{userIcon}</Button></Row>
+        <Row justify="end">
+          <Button className="sign-in-button">เข้าสู่ระบบ{userIcon}</Button>
+        </Row>
         <Row>
-          <div className='box1'>
-            <Row className='web-name'>ชื่อเว็บ</Row>
-            <Row className='web-detail'>ย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆ
-  ย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆ
-  ย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆ
-  ย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆย่อๆๆๆๆ</Row>
-            <Row className='two-button'>
-              <Col>
-              <Button className='find-scholar' onClick={()=>history.push('/student/allScholar')}>ค้นหาทุนการศึกษา</Button>
-              </Col>
-              <Col><Button className='give-scholar' onClick={()=>history.push('/funder/offerScholar')}>มอบทุนการศึกษา</Button></Col>
+          <div className="box1">
+            <Row className="web-name">Scholarasion</Row>
+            <Row className="web-detail">
+              แพลตฟอร์มสำหรับเชื่อมต่อ สร้างทางเลือก เพื่อเพิ่มโอกาสทางการศึกษา
             </Row>
-          </div >
-          <div className='box-image'>
-            <img src={homeImage} alt='' className='box2'/>
+            <Row className="two-button">
+              <Col>
+                <Button
+                  className="find-scholar"
+                  onClick={() => history.push("/student/allScholar")}
+                >
+                  ค้นหาทุนการศึกษา
+                </Button>
+              </Col>
+              <Col>
+                <Button
+                  className="give-scholar"
+                  onClick={() => history.push("/funder/offerScholar")}
+                >
+                  มอบทุนการศึกษา
+                </Button>
+              </Col>
+            </Row>
+          </div>
+          <div className="box-image">
+            <img src={homeImage} alt="" className="box2" />
           </div>
         </Row>
-
-          
-        
       </div>
     </div>
   );
-}
+};
 
 export default Home;

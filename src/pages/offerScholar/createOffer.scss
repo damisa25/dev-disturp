@@ -11,4 +11,52 @@
       margin: 20px 0;
     }
   }
+
+  .content-detail {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 0 80px 0 0;
+  }
+
+  .content-detail-long {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  .ant-input {
+    border-radius: 9px;
+  }
+  .ant-form-item-label > label {
+    font-size: 1.2rem;
+  }
+  .ant-form-item .ant-mentions,
+  .ant-form-item textarea.ant-input {
+    height: 80px;
+  }
+
+  .create-btn {
+    max-width: 120px;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    padding: 0 30px;
+    background: linear-gradient(130.88deg, #5270ec 18.65%, #a35cfd 94.43%);
+    box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+  }
+  .cancel-btn {
+    max-width: 120px;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0 30px;
+    border: none;
+  }
+  .ant-radio-group {
+    font-weight: normal;
+  }
 }

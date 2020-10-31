@@ -27,5 +27,10 @@
       color: $primary;
       border-radius: 12px;
     }
+    &:active {
+      background: $lightBlue;
+      color: $primary;
+      border-radius: 12px;
+    }
   }
 }
