@@ -38,6 +38,7 @@ const CreateOffer = () => {
   };
   const onFinish = (values: any) => {
     values.criterias = [values.criterias1].concat(values.criteriasN);
+    values.donor = "5f9db92b8844700abddb3c0d";
     console.log("Success:", values);
     postOfferScholar(values)
       .then(() => {

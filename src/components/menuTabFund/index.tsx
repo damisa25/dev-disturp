@@ -22,7 +22,7 @@ const MainMenuFund = () => {
         </Col>
         <Col>
           <Button className="button-menu" onClick={() => history.push("/")}>
-            ชาญชนะ วิชา{userIcon}
+            วิชา ชาญชนะ{userIcon}
           </Button>
         </Col>
       </Row>
