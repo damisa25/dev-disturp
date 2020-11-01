@@ -12,7 +12,10 @@
     font-size: 1rem;
     font-weight: 600;
     max-width: 140px;
+    padding: auto 20px;
+    background: white;
     border: none;
+    cursor: pointer;
     height: 50px;
     &.status {
       margin-left: 20px;
@@ -27,7 +30,26 @@
       color: $primary;
       border-radius: 12px;
     }
-    &:active {
+  }
+  .active-button-menu {
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    max-width: 140px;
+    border: none;
+    height: 50px;
+    background: $lightBlue;
+    color: $primary;
+    border-radius: 12px;
+    &.status {
+      margin-left: 20px;
+    }
+    &:hover {
+      background: $lightBlue;
+      color: $primary;
+      border-radius: 12px;
+    }
+    &:focus {
       background: $lightBlue;
       color: $primary;
       border-radius: 12px;

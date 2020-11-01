@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import searchImage from "../../assets/mediamodifier_cropped_image-3.png";
 import Search from "antd/lib/input/Search";
 import { getScholarByStudentID } from "../../services/user.service";
+import moment from "moment";
 
 interface IAllScholars {
   name: String;
@@ -141,7 +142,9 @@ const TrackStatus = () => {
                         <div className="money">
                           {item.scholarship.priceAmount + " บาท"}
                         </div>
-                        <div className="detail">{item.createdDate}</div>
+                        <div className="detail">
+                          {moment(item.createdDate).format("DD/MM/YYYY")}
+                        </div>
                       </div>
                       <div className="button-card">
                         <Button

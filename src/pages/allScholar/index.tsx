@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import searchImage from "../../assets/mediamodifier_cropped_image-3.png";
 import Search from "antd/lib/input/Search";
 import { getAllScholars } from "../../services/user.service";
-
+import { useHistory } from "react-router-dom";
 interface IAllScholars {
   name: String;
   description: String;
@@ -17,6 +17,7 @@ interface IAllScholars {
 }
 
 const AllScholar = () => {
+  const history = useHistory();
   const searchIcon = <FontAwesomeIcon icon={faSearch} className="user-icon" />;
   const [scholars, setScholars] = useState<IAllScholars[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -63,6 +64,7 @@ const AllScholar = () => {
                   src="https://assets.brandinside.asia/uploads/2020/09/New-Project-2.jpg"
                 />
               }
+              onClick={() => history.push(`/sholarships/${item._id}`)}
             >
               <div className="card-detail">
                 <div>{item.name}</div>
@@ -99,6 +101,7 @@ const AllScholar = () => {
                   src="https://assets.brandinside.asia/uploads/2020/09/New-Project-2.jpg"
                 />
               }
+              onClick={() => history.push(`/sholarships/${item._id}`)}
             >
               <div className="card-detail">
                 <div>{item.name}</div>

@@ -17,9 +17,11 @@ const Home = () => {
         </Row>
         <Row>
           <div className="box1">
-            <Row className="web-name">Scholarasion</Row>
+            <Row className="web-name">Skola</Row>
             <Row className="web-detail">
-              แพลตฟอร์มสำหรับเชื่อมต่อ สร้างทางเลือก เพื่อเพิ่มโอกาสทางการศึกษา
+              เราคือแพลตฟอร์มสำหรับเชื่อมต่อ
+              <br />
+              สร้างทางเลือก เพื่อเพิ่มโอกาสทางการศึกษา
             </Row>
             <Row className="two-button">
               <Col>
@@ -30,6 +32,7 @@ const Home = () => {
                   ค้นหาทุนการศึกษา
                 </Button>
               </Col>
+              <Col span={2}></Col>
               <Col>
                 <Button
                   className="give-scholar"
