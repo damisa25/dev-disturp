@@ -26,7 +26,7 @@ const OfferScholar = () => {
 
   const studentSc = async () => {
     try {
-      const res = await getOfferByDonor("5f9db92b8844700abddb3c0d"); //has 1 user for now
+      const res = await getOfferByDonor("5f9dd9ec1405a82a12eac403"); //has 1 user for now
       setDonors(res.data);
       if (res) {
         setLoading(false);
