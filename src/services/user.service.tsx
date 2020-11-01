@@ -20,9 +20,14 @@ const getOfferByDonor = async (id: String) => {
   return axios.get(`${API_URL_DONERS}/${id}/scholarships`);
 };
 
+const getScolarshipById = async (id: string) => {
+  return axios.get(`${API_URL_OFFER}/${id}`);
+};
+
 export {
   postOfferScholar,
   getAllScholars,
   getScholarByStudentID,
   getOfferByDonor,
+  getScolarshipById,
 };
