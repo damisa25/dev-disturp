@@ -4,7 +4,7 @@ import './index.scss';
 import '../../index.scss'
 import { useParams } from 'react-router-dom';
 import MainMenu from '../../components/menuTab/index'
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 import { CheckCircleTwoTone, MinusCircleTwoTone } from '@ant-design/icons'
 
 const input = `
@@ -104,6 +104,18 @@ const ScholarshipDetail = (props: any) => {
                 <h2>ทุนเฉพาะทาง</h2>
                 <p> - ทุนเต็มจำนวน<br/> - ค่าใช้จ่ายรายเดือน</p>
               </div>
+              <div className="side-card" style={{paddingBottom: '5px', paddingRight: '24px'}}>
+                <Row justify="space-between">
+                  <Col>
+                    <h3>จำนวนเงิน</h3>
+                    <h2>10,000 บาท</h2>
+                  </Col>
+                  <Col>
+                    <h3>จำนวน</h3>
+                    <h2>5 ทุน</h2>
+                  </Col>
+                </Row>
+              </div>
               <div className="side-card">
                 <h2>เกณฑ์การให้ทุน</h2>
                 {checklists.map(({ label, checked }) => <div className="checklist">{checked ? <CheckCircleTwoTone twoToneColor="#00BB34"/> : <MinusCircleTwoTone twoToneColor="#eb2f96"/>}&nbsp;&nbsp;&nbsp;{label}</div> )}
@@ -119,6 +131,9 @@ const ScholarshipDetail = (props: any) => {
             </Col>
             <Col span={16} style={{padding: '0px 30px 0px 15px'}}>
               <ReactMarkdown source={input} />
+              <Button type="primary" className="submit-btn" onClick={() => {}}>
+                สมัครทุน
+              </Button>
             </Col>
           </Row>
         </div>
