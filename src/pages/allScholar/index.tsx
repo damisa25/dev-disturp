@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import "../../index.scss";
 import MainMenu from "../../components/menuTab/index";
-import { Input, Row, Checkbox, Col, Card, List } from "antd";
+import { Row, Checkbox, Col, Card, List } from "antd";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import searchImage from "../../assets/mediamodifier_cropped_image-3.png";
+import Search from "antd/lib/input/Search";
 
 const { Meta } = Card;
 
@@ -86,6 +87,60 @@ const AllScholar = () => {
   const onChangeMoney = (checkedValues: any) => {
     console.log("checked = ", checkedValues);
   };
+  const [searchValue, setSearchValue] = useState<string>("");
+  const handleSearch = (event: any) => {
+    setSearchValue(event);
+  };
+
+  const suggestScholar = (
+    <>
+      <Row>ทุนที่เหมาะสำหรับคุณ</Row>
+      <List
+        grid={{ gutter: 32, column: 3 }}
+        dataSource={data1}
+        renderItem={(item) => (
+          <List.Item>
+            <Card bordered={false} cover={<img alt="" src={item.img} />}>
+              <div className="card-detail">
+                <div>{item.title}</div>
+                <div className="detail">{item.des}</div>
+                <div className="money">{item.money + " บาท"}</div>
+              </div>
+            </Card>
+          </List.Item>
+        )}
+      />
+    </>
+  );
+  const allScholar = (
+    <>
+      <Row>{!searchValue ? "ทุนที่น่าสนใจ" : "ผลลัพธ์การค้นหา"}</Row>
+      <List
+        grid={{ gutter: 32, column: 3 }}
+        dataSource={data2.filter((data) => {
+          if (searchValue === "") {
+            return data;
+          } else if (
+            data.title.toLowerCase().includes(searchValue.toLowerCase())
+          ) {
+            return data;
+          }
+        })}
+        renderItem={(item) => (
+          <List.Item>
+            <Card bordered={false} cover={<img alt="" src={item.img} />}>
+              <div className="card-detail">
+                <div>{item.title}</div>
+                <div className="detail">{item.des}</div>
+                <div className="money">{item.money + " บาท"}</div>
+              </div>
+            </Card>
+          </List.Item>
+        )}
+      />
+    </>
+  );
+
   return (
     <div className="all-scholar">
       <MainMenu />
@@ -94,7 +149,12 @@ const AllScholar = () => {
           <div className="sub-search-box1">
             <Row>ทุนการศึกษาทั้งหมด</Row>
             <Row>
-              <Input placeholder="ค้นหา..." prefix={searchIcon} />
+              <Search
+                placeholder="ค้นหา..."
+                prefix={searchIcon}
+                onSearch={handleSearch}
+                allowClear
+              />
             </Row>
           </div>
         </Col>
@@ -147,38 +207,13 @@ const AllScholar = () => {
           </Checkbox.Group>
         </div>
         <div className="card-box">
-          <Row>ทุนที่เหมาะสำหรับคุณ</Row>
-          <List
-            grid={{ gutter: 32, column: 3 }}
-            dataSource={data1}
-            renderItem={(item) => (
-              <List.Item>
-                <Card bordered={false} cover={<img alt="" src={item.img} />}>
-                  <div className="card-detail">
-                    <div>{item.title}</div>
-                    <div className="detail">{item.des}</div>
-                    <div className="money">{item.money + " บาท"}</div>
-                  </div>
-                </Card>
-              </List.Item>
-            )}
-          />
-          <Row>ทุนที่น่าสนใจ</Row>
-          <List
-            grid={{ gutter: 32, column: 3 }}
-            dataSource={data2}
-            renderItem={(item) => (
-              <List.Item>
-                <Card bordered={false} cover={<img alt="" src={item.img} />}>
-                  <div className="card-detail">
-                    <div>{item.title}</div>
-                    <div className="detail">{item.des}</div>
-                    <div className="money">{item.money + " บาท"}</div>
-                  </div>
-                </Card>
-              </List.Item>
-            )}
-          />
+          {!searchValue ? (
+            <>
+              {suggestScholar} {allScholar}
+            </>
+          ) : (
+            allScholar
+          )}
         </div>
       </div>
     </div>

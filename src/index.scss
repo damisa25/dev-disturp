@@ -141,3 +141,16 @@ code {
   right: -10px;
   border-radius: 100%;
 }
+
+.ant-upload.ant-upload-drag {
+  height: 400px;
+  border-radius: 12px !important;
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon {
+  display: none;
+}
+
+.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+  border-radius: 30px !important;
+}
