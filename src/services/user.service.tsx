@@ -6,4 +6,8 @@ const postOfferScholar = async (data: any) => {
   return axios.post(`${API_URL_OFFER}`, data);
 };
 
-export { postOfferScholar };
+const getScolarshipById = async (id: string) => {
+  return axios.get(`${API_URL_OFFER}/${id}`);
+};
+
+export { postOfferScholar, getScolarshipById };
